@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://btxylffm5diqa"]
+[gd_scene load_steps=2 format=3 uid="uid://btxylffm5diqa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_casif"]
+font_size = 46
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 661.0
+offset_top = 67.0
+offset_right = 1204.0
+offset_bottom = 220.0
+text = "HELLOOOOOOOOOOOO"
+label_settings = SubResource("LabelSettings_casif")
+horizontal_alignment = 1
