@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3lmwjgk4mf2c"]
+[gd_scene load_steps=13 format=3 uid="uid://c3lmwjgk4mf2c"]
 
 [ext_resource type="Script" path="res://ScrollCam.gd" id="1_rbg22"]
 [ext_resource type="Script" path="res://Mainsite.gd" id="1_y514p"]
 [ext_resource type="Shader" uid="uid://sgupufi3cfau" path="res://Background.tres" id="2_4615w"]
 [ext_resource type="AudioStream" uid="uid://ci2mxgbiaowss" path="res://tm_pay_aaron_its_march_31st_tm_pay_aaron.ogg" id="4_rn78k"]
+[ext_resource type="Texture2D" uid="uid://cg7bnbl4veahr" path="res://arronmc.png" id="5_a28d4"]
+[ext_resource type="Texture2D" uid="uid://3l3ggu0nobjw" path="res://quwcFf5r.jpg" id="6_f6jqh"]
+[ext_resource type="Texture2D" uid="uid://oflf6f48xjks" path="res://IMG_5774.jpg" id="7_whwfk"]
 
 [sub_resource type="Gradient" id="Gradient_ap1vg"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.283951, 0.722222, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.231373, 0.129412, 0.180392, 1, 0.231373, 0.129412, 0.180392, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w5id3"]
 gradient = SubResource("Gradient_ap1vg")
@@ -28,50 +31,78 @@ font_size = 46
 [node name="MainSite" type="Node2D"]
 script = ExtResource("1_y514p")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 70.0
-script = ExtResource("1_rbg22")
-
 [node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.176471, 0.0980392, 0.133333, 1)
 texture_repeat = 2
 scale = Vector2(7.50391, 10.6641)
 texture = SubResource("GradientTexture2D_w5id3")
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_4w1j4")
+position = Vector2(965, 1415.25)
+scale = Vector2(58.75, 88.5469)
 texture = SubResource("PlaceholderTexture2D_dhktr")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Download 1.20.1 Server mods"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -28.0
-offset_top = 5.0
-offset_right = 1894.0
-offset_bottom = 418.0
+offset_left = -35.0
+offset_top = -3.0
+offset_right = 1887.0
+offset_bottom = 190.0
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
+modulate = Color(0.180392, 0, 0.184314, 0.556863)
+position = Vector2(955.58, 94)
+rotation = 1.5708
+scale = Vector2(0.367902, 3.90297)
+texture = SubResource("GradientTexture2D_w5id3")
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "HELLOOOOOOOOOOOO"
+text = "HELLOOOOOOOOOOOO WELCOME HOME"
 label_settings = SubResource("LabelSettings_kkb58")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = 385.0
-offset_top = 357.0
-offset_right = 622.0
-offset_bottom = 388.0
+offset_left = 253.0
+offset_top = 301.0
+offset_right = 568.0
+offset_bottom = 356.0
 text = "Download 1.20.1 Server mods
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rn78k")
 autoplay = true
+bus = &"Site Music"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_top = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 70.0
+script = ExtResource("1_rbg22")
+
+[node name="HSlider" type="HSlider" parent="Camera2D"]
+offset_left = 1654.0
+offset_top = 1013.0
+offset_right = 1901.0
+offset_bottom = 1058.0
+value = 100.0
+
+[node name="Arronmc" type="Sprite2D" parent="."]
+position = Vector2(1567, 2636)
+texture = ExtResource("5_a28d4")
+
+[node name="QuwcFf5r" type="Sprite2D" parent="."]
+position = Vector2(1444, 606)
+texture = ExtResource("6_f6jqh")
+
+[node name="Img5774" type="Sprite2D" parent="."]
+position = Vector2(1479, 542)
+scale = Vector2(0.233333, 0.134635)
+texture = ExtResource("7_whwfk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
