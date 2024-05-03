@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	OS.shell_open("")
+	OS.shell_open("https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fcoobenguy%2Fcoobenguy.github.io%2Ftree%2Fmain%2FDownloadables%2F1.20%2520mods")
