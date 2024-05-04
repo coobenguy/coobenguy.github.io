@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://btxylffm5diqa"]
 
-[ext_resource type="PackedScene" uid="uid://c3lmwjgk4mf2c" path="res://Main_site.tscn" id="1_o82ae"]
+[ext_resource type="PackedScene" uid="uid://ch0wy81gno2ae" path="res://tm_pays_aaron.tscn" id="1_6f85t"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="MainSite" parent="." instance=ExtResource("1_o82ae")]
+[node name="TM pays aaron" parent="." instance=ExtResource("1_6f85t")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3lmwjgk4mf2c"]
+[gd_scene load_steps=18 format=3 uid="uid://c3lmwjgk4mf2c"]
 
 [ext_resource type="Script" path="res://ScrollCam.gd" id="1_rbg22"]
 [ext_resource type="Script" path="res://Mainsite.gd" id="1_y514p"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cg7bnbl4veahr" path="res://arronmc.png" id="5_a28d4"]
 [ext_resource type="Texture2D" uid="uid://3l3ggu0nobjw" path="res://quwcFf5r.jpg" id="6_f6jqh"]
 [ext_resource type="Texture2D" uid="uid://oflf6f48xjks" path="res://IMG_5774.jpg" id="7_whwfk"]
+[ext_resource type="Script" path="res://addons/alternatetimer/AlternateTimer.gd" id="8_w26g2"]
 
 [sub_resource type="Gradient" id="Gradient_ap1vg"]
 interpolation_mode = 2
@@ -65,6 +66,9 @@ _data = {
 "Dance": SubResource("Animation_hu28b"),
 "RESET": SubResource("Animation_8e8yd")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_tu70a"]
+font_size = 18
 
 [node name="MainSite" type="Node2D"]
 script = ExtResource("1_y514p")
@@ -150,4 +154,33 @@ libraries = {
 autoplay = "Dance"
 speed_scale = 1.069
 
+[node name="PlayTMGame" type="Button" parent="."]
+modulate = Color(0, 0.686275, 0.913725, 1)
+offset_left = 681.0
+offset_top = 656.0
+offset_right = 1011.0
+offset_bottom = 719.0
+theme_override_font_sizes/font_size = 36
+text = "PLAY WITH TM"
+
+[node name="AlternateTimer" type="Node" parent="."]
+script = ExtResource("8_w26g2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1178.0
+offset_top = 868.0
+offset_right = 1437.0
+offset_bottom = 897.0
+text = "Time spent listening on a raft:"
+label_settings = SubResource("LabelSettings_tu70a")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1443.0
+offset_top = 869.0
+offset_right = 1702.0
+offset_bottom = 898.0
+text = "fuck you"
+label_settings = SubResource("LabelSettings_tu70a")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PlayTMGame" to="." method="_on_play_tm_game_pressed"]

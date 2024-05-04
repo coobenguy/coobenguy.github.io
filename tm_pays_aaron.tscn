@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch0wy81gno2ae"]
+
+[sub_resource type="Environment" id="Environment_ewv4n"]
+background_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.0235294, 0.0509804, 0.00784314, 1)
+fog_density = 0.2735
+adjustment_contrast = 1.96
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bwm5r"]
+size = Vector2(50, 50)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lwy5t"]
+flip_faces = true
+height = 0.5
+radial_segments = 16
+rings = 16
+is_hemisphere = true
+
+[node name="TM pays aaron" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ewv4n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bwm5r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0.13676, -0.201035, -0.467915)
+mesh = SubResource("SphereMesh_lwy5t")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278646, 2.50555, 1.47831)
+light_color = Color(0.847059, 0.752941, 0.603922, 1)
+light_energy = 7.393
